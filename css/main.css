@@ -225,7 +225,7 @@ main section .wrap{
 }
 /* ---------------------------------------- 포트폴리오 ---------------------------------------- */
 #portfolio {
-
+  
 }
 #portfolio .wrap {
   justify-content: start;
@@ -256,7 +256,6 @@ main section .wrap{
   height: 30px;
 }
 #portfolio ul.filterBt li{
-  
 }
 #portfolio ul.filterBt li a{ 
   width: 100px;
@@ -268,26 +267,30 @@ main section .wrap{
   border-radius: 15px;
   transition: all 0.3s;
 }
-/* #portfolio ul.filterBt li a:hover{  
+#portfolio ul.filterBt li a:hover{  
    background-color: #789;
-} */
+}
 .currentBt{
   background-color: #789 !important;
 }
 .liHide{
   opacity: 0;
 }
-#portfolio ul.list{
+#portfolio .swiper{
+  width: 100%;
+  height: 100%;
+}
+#portfolio .list{
   display: flex;
-  justify-content: space-evenly;
-  height: 75%;
+  justify-content: space-between;
+  height: 95%;
   flex-wrap: wrap;
-  margin-top: 3%; 
+  margin-top: 3%;   
 }
 #portfolio ul.list li{
   border-radius: 10px;
   background-color: #fff3;
-  width: 30%;
+  width: 32%;
   transition: all 0.5s;
   height: 45%;
   display: flex;
@@ -371,6 +374,7 @@ main section .wrap{
   background-repeat: no-repeat;
   background-position: top;
   border-radius: 10px;
+  z-index: 1;
 }
 #portfolio .closeBt{
   position: absolute;
