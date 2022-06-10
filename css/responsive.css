@@ -1,6 +1,9 @@
 @media screen and (max-width:768px){
   /*  상단영역  */
-  header .h1{  
+  header .h1::after{
+    display: none;
+  }
+  header .h1 a{  
   font-size: calc(30px * 0.7);
   padding: calc(25% - 90px) 0 0 calc(50% - 90px); 
   }
@@ -84,7 +87,6 @@
   max-width: 56vh;
   max-height: 72vh;
   height: 100%;
-  border-radius: 10px 10px 0 0;
   }
   #about .intro .p{
   height: 50%;
@@ -175,7 +177,17 @@
   display: none;
   }
   #portfolio .btnA{
-  display: none;
+  top: 50%;
+  }
+  #portfolio .swiper-button-next{  
+  right: 0px;
+  }
+  #portfolio .swiper-button-prev{  
+  left: 0px;
+  }
+  #portfolio .swiper-button-next::after, 
+  #portfolio .swiper-button-prev::after{
+    font-size: 30px;
   }
   #portfolio ul.list{  
   height: calc(100% / 7.5);
@@ -205,7 +217,6 @@
   font-size: 16px;
   }
   #portfolio ul.list li .previewBt{
-    
   display: none;
   }
   /*  컨택트  */
