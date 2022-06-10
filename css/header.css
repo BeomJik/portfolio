@@ -1,0 +1,86 @@
+header {    
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  color: #fff;
+  height: 0;
+}
+header a{
+  font-weight: 900;
+}
+header .wrap{  
+  width: 100%;
+}
+header .h1 {    
+  font-size: 30px;
+  text-shadow: 2px 2px 5px #333;
+  transition: all 0.5s;
+  padding: 5px;
+  margin-left: 3%;
+  margin-top: 2%;
+  width: fit-content;
+}
+header .h1::after {
+  content: "";
+  background-color: #fcf951;
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  margin-left: 5px;
+}
+header .h1:hover{
+  color: #fcf951;
+}
+header ul.gnb {    
+  text-align: right;
+  z-index: 1; 
+  top: 4%;
+  right: 3%; 
+  position: fixed;
+  transform: translateX(300px);
+  transition: all 0.5s;
+}
+header ul.gnb li {
+  display: flex;
+  justify-content: flex-end;
+}
+header ul.gnb li a {
+  color: #fff;
+  font-size: 25px;
+  text-shadow: 2px 2px 5px #333;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.5s;
+  width: fit-content;
+  align-items: flex-end;
+}
+header ul.gnb li a::after{
+  content:"";
+  display: block;
+  width: 0%;
+  height: 3px;
+  background-color: #fff;
+  margin-top: 5px;
+  transition: all 0.5s;
+  border-radius: 2px; 
+}
+header ul.gnb li a:hover::after{
+  background-color: #fcf951;
+  width: 100%;
+}
+header ul.gnb li a.underline::after{
+  background-color: #fcf951;
+  width: 100%;
+}
+::selection {
+  background-color: #000;
+	color: #fcf951;
+}
+.current{
+  color: #fcf951 !important;;
+}
+.gnbShow{
+  transform: initial !important;
+}

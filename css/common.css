@@ -1,0 +1,130 @@
+body{
+  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 나눔스퀘어, 'NanumSquare', sans-serif;
+}
+.wrap{
+  width: 1100px;
+  margin: 0 auto;
+}
+.h1{
+  font-size: 50px;
+  font-weight: 900;
+}
+.h2{
+  font-size: 95px;
+  font-weight: 900;
+}
+.h3{
+  font-size: 33px;
+  font-weight: 700;
+}
+.h4{
+  font-size: 27px;
+  font-weight: 700;
+}
+.h5{}
+.h6{}
+.block{
+  display: block;
+}
+.hide{
+  display: none;
+}
+/* 패딩 */
+
+.padding-t10{
+  padding-top: 10px;
+}
+.padding-t20{
+  padding-top: 20px;
+}
+.padding-t30{
+  padding-top: 30px;
+}
+.padding-t40{
+  padding-top: 40px;
+}
+.padding-t50{
+  padding-top: 50px;
+}
+.padding-t60{
+  padding-top: 60px;
+}
+
+.padding-b10{
+  padding-bottom: 10px;
+}
+.padding-b20{
+  padding-bottom: 20px;
+}
+.padding-b30{
+  padding-bottom: 30px;
+}
+.padding-b40{
+  padding-bottom: 40px;
+}
+.padding-b50{
+  padding-bottom: 50px;
+}
+.padding-b60{
+  padding-bottom: 60px;
+}
+
+/* 마진 */
+
+.margin-t10{
+  margin-top: 10px;
+}
+.margin-t20{
+  margin-top: 20px;
+}
+.margin-t30{
+  margin-top: 30px;
+}
+.margin-t40{
+  margin-top: 40px;
+}
+.margin-t50{
+  margin-top: 50px;
+}
+.margin-t60{
+  margin-top: 60px;
+}
+
+.margin-b10{
+  margin-bottom: 10px;
+}
+.margin-b20{
+  margin-bottom: 20px;
+}
+.margin-b30{
+  margin-bottom: 30px;
+}
+.margin-b40{
+  margin-bottom: 40px;
+}
+.margin-b50{
+  margin-bottom: 50px;
+}
+.margin-b60{
+  margin-bottom: 60px;
+}
+.p{
+  font-size:13px; 
+  line-height: 1.4;
+}
+
+/* 줄 간격 */
+
+.line-height1_2{
+  line-height: 1.2;
+}
+.line-height1_4{
+  line-height: 1.4;
+}
+.line-height1_5{
+  line-height: 1.5;
+}
+.line-height1_6{
+  line-height: 1.6;
+}
