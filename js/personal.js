@@ -271,4 +271,13 @@ $(function(){
             $(preview).fadeOut();
         }  
     });
+
+    // 스위퍼
+    var swiper = new Swiper("#portfolio .swiper", {
+        spaceBetween: 30,
+        navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+        },
+    });
 });
