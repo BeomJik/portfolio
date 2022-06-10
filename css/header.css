@@ -12,14 +12,8 @@ header a{
 header .wrap{  
   width: 100%;
 }
-header .h1 {    
-  font-size: 30px;
-  text-shadow: 2px 2px 5px #333;
-  transition: all 0.5s;
-  padding: 5px;
-  margin-left: 3%;
-  margin-top: 2%;
-  width: fit-content;
+header .h1{
+  
 }
 header .h1::after {
   content: "";
@@ -29,7 +23,17 @@ header .h1::after {
   display: inline-block;
   margin-left: 5px;
 }
-header .h1:hover{
+header .h1 a { 
+  color: #fff;
+  font-size: 30px;
+  text-shadow: 2px 2px 5px #333;
+  transition: all 0.5s;
+  padding: 5px;
+  margin-left: 3%;
+  margin-top: 2%;
+  display: inline-block;
+}
+header .h1 a:hover{
   color: #fcf951;
 }
 header ul.gnb {    
