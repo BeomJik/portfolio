@@ -92,10 +92,10 @@ $(function(){
     });
 
     // 버튼 크런트
-    $(".all").addClass("currentBt");
-    $("#portfolio ul.button li a").click(function(){
+    $(".filterAll").addClass("currentBt");
+    $("#portfolio .filterBt li a").click(function(){
         $(this).addClass("currentBt");
-        $("#portfolio ul.button li a").not(this).removeClass("currentBt");
+        $("#portfolio .filterBt li a").not(this).removeClass("currentBt");
     });
 
     /////////////////////////////////// 하단
