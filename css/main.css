@@ -525,5 +525,5 @@ main section .wrap{
   height: 60px;
 }
 #contact .sns .p:nth-child(4) a::before{
-  background-image: url(../img/facebook.png);
+  background-image: url(../img/github.svg);
 }
