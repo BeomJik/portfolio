@@ -215,7 +215,7 @@ main section .wrap{
   background-position: center;
 }
 #skills ul.tool li:nth-of-type(4)::before{
-  background: url(../img/ps.png);
+  background: url(../img/bootstrap.png);
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
