@@ -18,11 +18,12 @@ main section{
   height: calc(100% / 4);
 } 
 main section .wrap{ 
-  width: 100%;
+  width: calc(100% - 60px);
   height: 100%;
   text-align: center;
   display: flex;
   flex-direction: column;
+  max-width: 1200px;
 }
 .wrap .subject{
   opacity: 0;
@@ -398,6 +399,7 @@ main section .wrap{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
 }
 #contact .h2 {
   color: #fff;
@@ -424,15 +426,69 @@ main section .wrap{
   line-height: 3;
   font-weight: 500;
 }
-#contact p strong {
+#contact strong {
   font-size: 30px;
   display: block;
+}
+#contact .gform{
+  
+} 
+#contact .gform .form-elements{
+  display: flex;
+  width: 60%;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: end;
+}
+#contact .gform .form-elements .pure-group{
+  width: calc(100% / 2 - 20px);
+  display: flex;
+  /*! justify-content: space-between; */
+  margin: 10px;
+  flex-wrap: wrap;
+}
+#contact .gform .form-elements .pure-group:nth-of-type(3){
+  width: 100%;
+}
+#contact .gform .form-elements .pure-group input{
+  width: 100%;
+  margin: 10px 0 0 0;
+  padding: 10px;
+}
+#contact .gform .form-elements .pure-group label{
+  width: 100px;
+  text-align: left;
+  margin: 5px;
+}
+#contact .gform .form-elements .pure-group #name ,
+#contact .gform .form-elements .pure-group #email,{
+  width: 50%;
+}
+#contact .gform .form-elements .pure-group textarea{
+  width: 100%;
+  margin: 10px 0 0 0;
+  padding: 10px;
+}
+#contact .button-success{
+  display: block;
+  width: 100%;
+  margin: 10px;
+  border: 1px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  padding: 20px;
+  transition: all 0.5s;
+}
+#contact .button-success:hover{
+  background-color: #fff;
+  color: #000;  
 }
 #contact div.info {
   display: flex;
   justify-content: space-evenly;
   text-align: start;
   line-height: 1.6;
+  gap: 50px;
 }
 #contact div.ad { 
   height: 143.4px;
