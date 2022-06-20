@@ -1,0 +1,53 @@
+footer{
+  background-color: #0f4c82;
+  padding: 20px 0;
+  text-align: center;
+  color: #fff;
+}
+footer .copy{
+  
+}
+footer a.top{ 
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+  background-color: #fcf951;
+  font-size: 0;
+  position: fixed;
+  bottom: 30px;
+  right: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s;
+  transform: translateY(100px);
+}
+footer a.top::before{
+  content: "";
+  display: block;
+  border: 3px solid #0f4c82;
+  width: 30px;
+  height: 30px;
+  transform: rotate(45deg);
+  border-right: none;
+  border-bottom: none;
+  margin-top: 20px;
+}
+footer a.top:hover::before{
+  animation-name: atop;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.5s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+@keyframes atop{
+  0%{
+    transform: rotate(45deg) translate(10%,10%);
+  }
+  100%{
+    transform: rotate(45deg) translate(-10%,-10%);
+  }
+}
+.atopShow{
+  transform: initial !important;
+}

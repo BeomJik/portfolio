@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Keywords" content="웹, 퍼블리셔, 포트폴리오, html, css" />
+    <meta name="Description" content="박범근 / 신입 웹 퍼블리셔" />
+    <!-- 파비콘 -->
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon2.ico">
+    <title>박범근 / 신입 웹 퍼블리셔</title>
+    <!-- 리셋 css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
+    <!-- 구글폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!--  noto sans korean  -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">  
+    <!-- 블랙한 -->
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet"> 
+    <!-- 나눔고딕 -->
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet"> 
+    <!-- 어썸 아이콘 -->
+    <script src="https://kit.fontawesome.com/003457cfc7.js" crossorigin="anonymous"></script>
+    <!-- 나눔스퀘어 -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css">
+    <!-- css -->
+    <link rel="stylesheet" href="css/common.css" type="text/css">
+    <link rel="stylesheet" href="css/header.css" type="text/css">
+    <link rel="stylesheet" href="css/title.css" type="text/css">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link rel="stylesheet" href="css/footer.css" type="text/css">
+    <link rel="stylesheet" href="css/responsive.css" type="text/css">
+    <link rel="stylesheet" href="css/swiper-arrow.css" type="text/css">
+    <!-- 제이쿼리 자바스크립트 라이브러리 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- 페이지 스크롤링 -->
+    <script src="js/fageScrolling.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            // 변수
+            $htmlbody = $("html,body");
+            aboutTop = $("#about").offset().top;
+            skillsTop = $("#skills").offset().top;
+            portfolioTop = $("#portfolio").offset().top;
+            contactTop = $("#contact").offset().top;
+            aboutH = $("#about").height();
+            skillsH = $("#skills").height();
+            portfolioH = $("#portfolio").height();
+            contactH = $("#contact").height();
+            gnbBtn = $("header ul.gnb li a");
+            gnbHome = $("header ul.gnb li a.home");
+            gnbAbout = $("header ul.gnb li a.about");
+            gnbSkills = $("header ul.gnb li a.skills");
+            gnbPortfolio = $("header ul.gnb li a.portfolio");
+            gnbContact = $("header ul.gnb li a.contact");
+
+            /////////////////////////////////// 헤더
+
+            // 대메뉴 홈 버튼 색 변경, 밑 줄
+            $(gnbHome).addClass("current underline");
+
+            // 타이틀 폰트 애니메이션 클래스
+            $("#title hgroup").addClass("slideright");
+
+            // 대메뉴 애니메이션
+            $("header ul.gnb").addClass("gnbShow");
+
+            // 대메뉴 버튼 누르면 밑줄
+            $(gnbBtn).click(function(){                
+                $(this).addClass("underline");
+                $(gnbBtn).not(this).removeClass("underline");
+            });
+                    
+            // 메뉴 버튼 누르면 각 위치로 이동
+            //home
+            $(gnbHome).click(function(){
+                $htmlbody.animate({scrollTop : 0});
+                return false;
+            });
+            //about
+            $(gnbAbout).click(function(){
+                $htmlbody.animate({scrollTop : aboutTop});
+                return false;
+            });
+            //skills
+            $(gnbSkills).click(function(){
+                $htmlbody.animate({scrollTop : skillsTop});
+                return false;
+            });
+            //portfolio
+            $(gnbPortfolio).click(function(){
+                $htmlbody.animate({scrollTop : portfolioTop});
+                return false;
+            });
+            //contact
+            $(gnbContact).click(function(){
+                $htmlbody.animate({scrollTop : contactTop});
+                return false;
+            });
+
+            /////////////////////////////////// 메인
+                        
+            // contact info 누르면 정보 내려옴 // slideToggle 이용
+            $("#contact div.ad h3").click(function(){
+                $(this).toggleClass("rot180");
+                $(this).siblings("#contact div.ad .p").slideToggle(300);
+            });
+            $("#contact div.ad .p").hide();
+
+            // 포트폴리오 클릭 필터
+
+            // all
+            $(".filterAll").click(function(){
+                $("#portfolio ul.list li").removeClass("liHide");
+                return false;
+            });
+            // 반응형
+            $(".filterResponsive").click(function(){
+                $("#portfolio ul.list li").removeClass("liHide");
+                $("#portfolio ul.list li:contains('반응형')").removeClass("liHhow");
+                $("#portfolio ul.list li").not("#portfolio ul li:contains('반응형')").addClass("liHide");
+                return false;
+            });
+            // 제이쿼리
+            $(".filterJquery").click(function(){
+                $("#portfolio ul.list li").removeClass("liHide");
+                $("#portfolio ul.list li:contains('jQuery')").removeClass("liHhow");
+                $("#portfolio ul.list li").not("#portfolio ul li:contains('jQuery')").addClass("liHide");
+                return false;
+            });
+
+            // 버튼 크런트
+            $(".filterAll").addClass("currentBt");
+            $("#portfolio .filterBt li a").click(function(){
+                $(this).addClass("currentBt");
+                $("#portfolio .filterBt li a").not(this).removeClass("currentBt");
+            });
+
+            /////////////////////////////////// 하단
+
+            // 상단 이동버튼
+            $("footer a.top").click(function(){
+                $htmlbody.animate({scrollTop: 0});
+                return false;
+            });
+        });
+    </script>
+    <script>
+        $(function(){
+            // 스크롤 이벤트
+            $(window).scroll(function(){
+                
+                // 1 home 영역
+                if($(window).scrollTop() < aboutTop ){ 
+                    // 글씨 색 생김 클래스 붙임 
+                    $(gnbHome).addClass("current");
+                    // 나머지 글씨 색 사라짐 클래스 지움
+                    $(gnbBtn).not(gnbHome).removeClass("current");
+                    // 밑 줄 생김
+                    $(gnbHome).addClass("underline");
+                    // 나머지 밑 줄 사라짐
+                    $(gnbBtn).not(gnbHome).removeClass("underline");
+                    // 타이틀 폰트 애니메이션 클래스 
+                    $("#title hgroup").addClass("slideright");
+                } 
+
+                // 2 about 영역
+                if($(window).scrollTop() >= aboutTop - aboutH / 2 ){
+                    // 글씨 색 생김 클래스 붙임 
+                    $(gnbAbout).addClass("current"); 
+                    // 나머지 글씨 색 사라짐 클래스 지움
+                    $(gnbBtn).not(gnbAbout).removeClass("current");
+                    // 밑 줄 생김
+                    $(gnbAbout).addClass("underline");
+                    // 나머지 밑 줄 사라짐
+                    $(gnbBtn).not(gnbAbout).removeClass("underline");    
+                    // 타이틀 폰트 애니메이션 클래스 지움
+                    $("#title hgroup").removeClass("slideright");                      
+                } 
+                // 2 about 영역 제목 애니메이트
+                if($(window).scrollTop() >= aboutH / 3){
+                    $("#about .subject").addClass("currentH2");
+                }
+                if($(window).scrollTop() <= aboutH / 3){
+                    $("#about .subject").removeClass("currentH2");
+                }
+
+                // 3 skills 영역
+                if($(window).scrollTop() >= skillsTop - skillsH / 2 ){
+                    // 글씨 색 생김 클래스 붙임 
+                    $(gnbSkills).addClass("current");
+                    // 나머지 글씨 색 사라짐 클래스 지움
+                    $(gnbBtn).not(gnbSkills).removeClass("current"); 
+                    // 밑 줄 생김
+                    $(gnbSkills).addClass("underline");
+                    // 나머지 밑 줄 사라짐
+                    $(gnbBtn).not(gnbSkills).removeClass("underline");                                    
+                } 
+                // 3 skills 영역 제목 애니메이트
+                if($(window).scrollTop() >= aboutTop + skillsH / 2 ){
+                    $("#skills .subject").addClass("currentH2");
+                }       
+                if($(window).scrollTop() <= aboutTop + skillsH / 2 ){
+                    $("#skills .subject").removeClass("currentH2");
+                }                     
+
+                // 4 portfolio 영역
+                if($(window).scrollTop() >= portfolioTop - portfolioH / 2 ){
+                    // 글씨 색 생김 클래스 붙임 
+                    $(gnbPortfolio).addClass("current");
+                    // 나머지 글씨 색 사라짐 클래스 지움
+                    $(gnbBtn).not(gnbPortfolio).removeClass("current"); 
+                    // 밑 줄 생김
+                    $(gnbPortfolio).addClass("underline");
+                    // 나머지 밑 줄 사라짐
+                    $(gnbBtn).not(gnbPortfolio).removeClass("underline");                     
+                    
+                } 
+                // 4 portfolio 영역 제목 애니메이트
+                if($(window).scrollTop() >= skillsTop + portfolioH / 4 ){
+                    $("#portfolio .subject").addClass("currentH2");
+                }     
+                if($(window).scrollTop() <= skillsTop + portfolioH / 4 ){
+                    $("#portfolio .subject").removeClass("currentH2");
+                }     
+                    
+                // 5 contact 영역
+                if($(window).scrollTop() >= contactTop - 56 - contactH / 2){
+                    // 글씨 색 생김 클래스 붙임 
+                    $(gnbContact).addClass("current");
+                    // 나머지 글씨 색 사라짐 클래스 지움
+                    $(gnbBtn).not(gnbContact).removeClass("current");    
+                    // 밑 줄 생김
+                    $(gnbContact).addClass("underline");
+                    // 나머지 밑 줄 사라짐
+                    $(gnbBtn).not(gnbContact).removeClass("underline");                                                                
+                }   
+
+                // 5 contact 영역 제목 애니메이트            
+                if($(window).scrollTop() >= portfolioTop + contactH / 3 ){
+                    $("#contact .subject").addClass("currentH2");
+                }
+                if($(window).scrollTop() <= portfolioTop + contactH / 3 ){
+                    $("#contact .subject").removeClass("currentH2");
+                }  
+
+                // contact 진입 시 info 정보 내려옴 
+                if($(window).scrollTop() >= contactTop ){
+                    $("#contact div.ad h3").addClass("rot180");
+                    $("#contact div.ad .p").slideDown(300);
+                }
+                // contact 이탈 시 info 정보 올라감 
+                if($(window).scrollTop() < contactTop ){
+                    $("#contact div.ad h3").removeClass("rot180");
+                    $("#contact div.ad .p").slideUp(300);
+                }
+                
+                
+                // a.top
+                if($(window).scrollTop() >= aboutTop / 2 ){ // 상단 이동 버튼 보이게
+                    $("footer a.top").addClass("atopShow");
+                }
+                if($(window).scrollTop() <= aboutTop / 2 ){ // 상단이동 버튼 안보이게
+                    $("footer a.top").removeClass("atopShow");
+                }
+
+                // resize 브라우저창 크기 변경시
+                $(window).resize(function(){
+                    aboutTop = $("#about").offset().top;
+                    skillsTop = $("#skills").offset().top;
+                    portfolioTop = $("#portfolio").offset().top;
+                    contactTop = $("#contact").offset().top;
+                });
+                
+            });
+        });
+    </script>
+    <script>
+        $(function(){
+            // 포트폴리오 배경 each, attr 사용 변경
+            var pfNumber = $("#portfolio ul.list li").index(); 
+            $("#portfolio ul.list li").each(function(){
+                bgImgNumber = $("#portfolio ul.list li:eq("+pfNumber+")").attr("data-n");
+                $(this).css("background-image","url(img/pf"+bgImgNumber+".png)");
+                pfNumber++;
+            });  
+            // 포트폴리오 preview 버튼 클릭시 미리보기 팝업창
+            var portfolioWrap = $("#portfolio .wrap");
+            var previewBt = $("#portfolio ul.list li .previewBt");
+            // var preview = $(".preview");
+            $(previewBt).click(function(){
+                $(".preview").remove();
+                $(portfolioWrap).append("<div class='preview'></div>");
+                preview = $(".preview");
+                $(preview).hide().fadeIn();
+                imgNumber = $(this).parents("li").attr("data-n");
+                $(preview).css("background-image","url(img/pf"+imgNumber+".png)");
+                // 클릭시 미리보기 창 사라짐
+                $(preview).click(function(){
+                    $(this).fadeOut();
+                });
+                $(portfolioWrap).click(function(){
+                    $(preview).fadeOut();
+                });
+                return false;
+            });    
+            // 스크롤 이벤트 포트폴리오 영역 벗어나면 미리보기 팝업 제거
+            $(window).scroll(function(){
+                preview = $(".preview");
+                // 3 skills 영역
+                if($(window).scrollTop() <= portfolioTop - portfolioH / 2 ){
+                    // 포트폴리오 미리보기 팝업 제거
+                    $(preview).fadeOut();
+                }  
+                // 5 contact 영역
+                if($(window).scrollTop() >= contactTop - 56 - contactH / 2 ){            
+                    // 포트폴리오 미리보기 팝업 제거
+                    $(preview).fadeOut();
+                }  
+            });
+        });
+    </script>
+    <!-- 스위퍼 css -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <!-- 스위퍼 JS --> 
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        $(function(){
+            var swiper = new Swiper("#portfolio .swiper", {
+                spaceBetween: 30,
+                navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+                },
+            });
+        });
+    </script>
+</head>
+<body>
+    <!----------------------상단---------------------->
+    <header id="home">
+        <div class="wrap">
+            <h1 class="h1"><a href="">BeomJik's World</a></h1>
+            <ul class="gnb">
+                <li><a href="" class="home">HOME</a></li>
+                <li><a href="" class="about">ABOUT ME</a></li>
+                <li><a href="" class="skills">SKILLS</a></li>
+                <li><a href="" class="portfolio">PORTFOLIO</a></li>
+                <li><a href="" class="contact">CONTACT</a></li>
+            </ul>
+        </div>
+    </header>
+    <!----------------------타이틀---------------------->
+    <div id="title">
+        <div class="wrap">
+            <hgroup>
+                <h2 class="h2">
+                    <span class="block">꾸준히 발전하는</span>
+                    <span class="block">WEB PUBLISHER</span>
+                    <span class="block">박범근</span>
+                </h2>
+            </hgroup>
+        </div>
+    </div>
+    <!----------------------메인---------------------->
+    <main>
+        <!-- 소개 -->
+        <section id="about">
+            <div class="wrap">
+                <h2 class="h2 subject">ABOUT ME</h2>
+                <div class="intro">    
+                    <h3 class="h3">Intro</h3>
+                    <p class="p">
+                        <span title="별명 : 범직(BeomJik)">이름 : 박범근</span> <br>
+                        나이 : 2000.02.01 (만 22세)<br>
+                        학력 : 경민대학교 정보통신과 중퇴<br>
+                        수료 내역 : 종로 그린컴퓨터 학원 <br>
+                        자격증 : ITQ 한글, 엑셀, 파워포인트<br>
+                        장접 : 리더쉽, 이해력, 습득력<br>
+                        취미 : 복싱, 맛집 찾기, 음악 듣기 <br>
+                        특기 : 노래 부르기, 달리기, 리더쉽 <br>
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- 기술 -->
+        <section id="skills">
+            <div class="wrap">
+                <h2 class="h2 subject">SKILLS</h2>
+                <div class="wrapin">
+                    <h3 class="h3">I can do</h3>
+                    <ul class="skills">
+                        <li>
+                            <h4 class="h3">HTML5</h4>
+                            <p class="p">중상</p>
+                        </li>
+                        <li>
+                            <h4 class="h3">CSS3</h4>
+                            <p class="p">중상</p>
+                        </li>
+                        <li>
+                            <h4 class="h3">JS</h4>
+                            <p class="p">기초</p>
+                        </li>
+                    </ul>
+                    <h3 class="h3">I can do this too</h3>
+                    <ul class="tool">
+                        <li>
+                            <h4 class="h3">VS Code</h4>
+                        </li>
+                        <li>
+                            <h4 class="h3">Sass</h4>
+                        </li>
+                        <li>
+                            <h4 class="h3">Oven</h4>
+                        </li>
+                        <li>
+                            <h4 class="h3">Potoshop</h4>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- 포트폴리오 -->
+        <section id="portfolio">
+            <div class="wrap">
+                <h2 class="h2 subject">PORTFOLIO</h2>
+                <ul class="filterBt">
+                    <li><a href="" class="filterAll">All</a></li>
+                    <li><a href="" class="filterResponsive">반응형</a></li>
+                    <li><a href="" class="filterJquery">jQuery</a></li>
+                </ul>
+                <div class="btnA">
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <ul class="list swiper-slide">
+                            <li class="pf8" data-n="8">
+                                <div class="screen">
+                                    <h3 class="h3">카페24</h3>
+                                    <p class="p">카페24를 이용한 홈페이지 제작</p>
+                                    <p class="p">사용 기술 : Html5, Css3, jQuery</p>
+                                    <p class="p">사용 툴 : VS Code, Sass, bootstrap</p>
+                                    <span class="btControl">
+                                        <a href="" class="previewBt">미리보기</a>
+                                        <a href="https://beomjik0201.cafe24.com" target="blink" title="클릭하면 이동합니다" class="link">바로가기</a>
+                                    </span>
+                                </div>
+                            </li> 
+                            <li class="pf7" data-n="7">
+                                <div class="screen">
+                                    <h3 class="h3">윤현몰 코딩</h3>
+                                    <p class="p">메인 페이지 구현</p>
+                                    <p class="p">(PC, 모바일 반응형)</p>
+                                    <p class="p">사용 기술 : Html5, Css3, jQuery</p>
+                                    <p class="p">사용 툴 : VS Code, Sass, bootstrap</p>
+                                    <span class="btControl">
+                                        <a href="" class="previewBt">미리보기</a>
+                                        <a href="../../pf7 - 윤현몰/index.html" target="blink" title="클릭하면 이동합니다" class="link">바로가기</a>
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="pf6" data-n="6">
+                                <div class="screen">
+                                    <h3 class="h3">브랜드엑스<br>홈페이지 코딩</h3>
+                                    <p class="p">메인 페이지 구현</p>
+                                    <p class="p">(PC, 모바일 반응형)</p>
+                                    <p class="p">사용 기술 : Html5, Css3, jQuery</p>
+                                    <p class="p">사용 툴 : VS Code, Sass</p>
+                                    <span class="btControl">
+                                        <a href="" class="previewBt">미리보기</a>
+                                        <a href="../../pf6 - 브랜드엑스/index.html" target="blink" title="클릭하면 이동합니다" class="link">바로가기</a>
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="pfp3" data-n="p3">
+                                <div class="screen">
+                                    <h3 class="h3">달콤커피 코딩</h3>
+                                    <p class="p">메인 페이지 구현</p>
+                                    <p class="p">사용 기술 : Html5, Css3, jQuery</p>
+                                    <p class="p">사용 툴 : VS Code, Sass</p>
+                                    <span class="btControl">
+                                        <a href="" class="previewBt">미리보기</a>
+                                        <a href="../../pfp3 - 달콤커피/index.html" target="blink" title="클릭하면 이동합니다" class="link">바로가기</a>
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="pfp2" data-n="p2">
+                                <div class="screen">
+                                    <h3 class="h3">풍림무약</h3>
+                                    <p class="p">메인 페이지, 서브 페이지(1) 구현</p> 
+                                    <p class="p">사용 기술 : Html5, Css3, jQuery</p>
+                                    <p class="p">사용 툴 : VS Code, Sass</p>
+                                    <span class="btControl">
+                                        <a href="" class="previewBt">미리보기</a>
+                                        <a href="../../pfp2 - 풍림무약/index.html" target="blink" title="클릭하면 이동합니다" class="link">바로가기</a>
+                                    </span>
+                                </div>
+                            </li>                    
+                            <li class="pf5" data-n="5">
+                                <div class="screen">
+                                    <h3 class="h3">삼성전자<br>회사소개 코딩</h3>
+                                    <p class="p">메인 페이지, 서브 페이지(8) 구현</p> 
+                                    <p class="p">(PC, 모바일 반응형)</p>
+                                    <p class="p">사용 기술 : Html5, Css3, jQuery</p>
+                                    <p class="p">사용 툴 : VS Code, Sass</p>
+                                    <span class="btControl">
+                                        <a href="" class="previewBt">미리보기</a>
+                                        <a href="../../pf5 - 삼성전자 소개/index.html" target="blink" title="클릭하면 이동합니다" class="link">바로가기</a>
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="list swiper-slide">
+                           <li class="pf4" data-n="4">
+                                <div class="screen">
+                                    <h3 class="h3">한진칼 리뉴얼 코딩</h3>
+                                    <p class="p">(PC, 모바일 반응형)</p>
+                                    <p class="p">사용 기술 : Html5, Css3, jQuery</p>
+                                    <p class="p">사용 툴 : VS Code, Sass</p>
+                                    <span class="btControl">
+                                        <a href="" class="previewBt">미리보기</a>
+                                        <a href="../../pf4 - 한진칼 리뉴얼/index.html" target="blink" title="클릭하면 이동합니다" class="link">바로가기</a>
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="pf3" data-n="3">
+                                <div class="screen">
+                                    <h3 class="h3">투썸플레이스<br> 홈페이지 코딩</h3>
+                                    <p class="p">메인 페이지 구현</p> 
+                                    <p class="p">사용 기술 : Html5, Css3, jQuery</p>
+                                    <p class="p">사용 툴 : VS Code, Sass</p>
+                                    <span class="btControl">
+                                        <a href="" class="previewBt">미리보기</a>
+                                        <a href="../../pf3 - 투썸/index.html" target="blink" title="클릭하면 이동합니다" class="link">바로가기</a>
+                                    </span>
+                                </div>
+                            </li>    
+                            <li class="pf2" data-n="2">
+                                <div class="screen">
+                                    <h3 class="h3">제주항공 홈페이지 코딩</h3>
+                                    <p class="p">메인 페이지 구현</p> 
+                                    <p class="p">사용 기술 : Html5, Css3</p>
+                                    <p class="p">사용 툴 : VS Code</p>
+                                    <span class="btControl">
+                                        <a href="" class="previewBt">미리보기</a>
+                                        <a href="../../pf2 - 제주항공 개별코딩/index.html" target="blink" title="클릭하면 이동합니다" class="link">바로가기</a>
+                                    </span>
+                                </div>
+                            </li>    
+                            <li class="pf1" data-n="1">
+                                <div class="screen">
+                                    <h3 class="h3">한진칼 코딩</h3>
+                                    <p class="p">메인 페이지 구현</p> 
+                                    <p class="p">사용 기술 : Html5, Css3</p>
+                                    <p class="p">사용 툴 : VS Code</p>
+                                    <span class="btControl">
+                                        <a href="" class="previewBt">미리보기</a>
+                                        <a href="../../pf1 - 한진칼/index.html" target="blink" title="클릭하면 이동합니다" class="link">바로가기</a>
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 컨택트 -->
+        <section id="contact">
+            <div class="wrap">
+                <h2 class="h2 subject">CONTACT</h2>
+                <p><strong>끝까지 봐주셔서 감사합니다!</strong>항상 노력하고 발전하는 꼭 필요한 인재가 되겠습니다!</p>
+                <div class="info">
+                    <div class="ad"> 
+                        <h3 class="h3" title="클릭하면 내려옵니다">INFO</h3>
+                        <p class="p">Address : <a href="https://url.kr/ulvs8r" target="blink" title="클릭하면 이동합니다">고양시 덕양구 주교동</a></p>
+                        <p class="p">E-Mail : <span>qjarmsrkt0201@gmail.com</span></p>
+                        <p class="p">Phone : <span>010 4431 8454</span></p>
+                    </div>
+                    <div class="sns">
+                        <h3 class="h3">SNS</h3>
+                        <p class="p">Kakao Talk : <a href="https://open.kakao.com/o/s1XdEN2d" target="blink" title="클릭하면 이동합니다"></a></p>
+                        <p class="p">Instagram : <a href="https://www.instagram.com/beomjik_0201/" target="blink" title="클릭하면 이동합니다"></a></p>
+                        <p class="p">Face Book : <a href="https://www.facebook.com/profile.php?id=100003996336010" target="blink" title="클릭하면 이동합니다"></a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!----------------------하단---------------------->
+    <footer>
+        <p class="copy">Copyright © 2022 BeomJik.</p>      
+        <a href="" class="top">상단이동</a>
+    </footer>
+</body>
+</html>
