@@ -526,4 +526,5 @@ main section .wrap{
 }
 #contact .sns .p:nth-child(4) a::before{
   background-image: url(../img/github.svg);
+  background-color: #161b22;
 }
