@@ -215,7 +215,7 @@ main section .wrap{
   background-position: center;
 }
 #skills ul.tool li:nth-of-type(4)::before{
-  background: url(../img/ps.png);
+  background: url(../img/bootstrap.png);
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -525,5 +525,5 @@ main section .wrap{
   height: 60px;
 }
 #contact .sns .p:nth-child(4) a::before{
-  background-image: url(../img/facebook.png);
+  background-image: url(../img/github.svg);
 }
