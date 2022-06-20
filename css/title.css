@@ -8,6 +8,39 @@
   background-position: 0% 83%;
   overflow: hidden;
 }
+#title::before{
+  content: "";
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-top: 2px solid #fcf951;
+  border-right: 2px solid #fcf951;
+  position: absolute;
+  bottom: 9%;
+  left: calc(50% - 2px);
+  animation: moveDown infinite 1s forwards;
+  transition: all 0.5s;
+  transform: rotate(45deg);
+}
+@keyframes moveDown{
+  0%{
+    transform: rotate(135deg);
+  }
+  100%{
+    transform: rotate(135deg) translateX(200%) translateY(-200%);
+  }
+}
+#title::after{
+  content: "";  
+  display: block;
+  width: 25px;
+  height: 50px;
+  border-radius: 25px;
+  border: 2px solid #fcf951;
+  position: absolute;
+  bottom: 5%;
+  left: calc(50% - 13px);
+}
 #title a{
   color: #fff;
 }
@@ -46,20 +79,6 @@
   color: #fcf951;
   text-shadow: 5px 5px #000;
 }
-/* 연습 */
-/* #title hgroup .h2{
-  perspective: 200px;
-}
-#title hgroup .h2 span:nth-child(2){
-  
-  transform-origin: bottom;
-  transition: all 0.5s;
-  transform: rotatex(90deg);
-  perspective: 100px;
-}
-#title hgroup .h2 span:nth-child(2):hover{
-  transform: rotatex(0deg);
-} */
 
 #title hgroup .h2 span:nth-child(n):hover {
   /*! color: #ffde00; */
