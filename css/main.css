@@ -460,7 +460,7 @@ main section .wrap{
   margin: 5px;
 }
 #contact .gform .form-elements .pure-group #name ,
-#contact .gform .form-elements .pure-group #email,{
+#contact .gform .form-elements .pure-group #email{
   width: 50%;
 }
 #contact .gform .form-elements .pure-group textarea{
