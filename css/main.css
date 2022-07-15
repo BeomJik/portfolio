@@ -209,7 +209,7 @@ main section .wrap{
   background-position: center;
 }
 #skills ul.tool li:nth-of-type(3)::before{
-  background: url(../img/oven.png);
+  background: url(../img/ps.png);
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
