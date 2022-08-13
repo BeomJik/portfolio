@@ -143,8 +143,6 @@
   #skills ul.skills li p.p{    
     font-size: calc(30px * 0.7);
   }
-  #skills ul.tool{
-  }
   #skills ul.tool > h3.h3{    
     font-size: calc(50px * 0.7);
     margin: 10px 0;    
