@@ -84,7 +84,7 @@ $(function(){
         return false;
     });
     // 제이쿼리
-    $(".filterJquery").click(function(){
+    $(".filterJs").click(function(){
         $("#portfolio ul.list li").removeClass("liHide");
         $("#portfolio ul.list li:contains('jQuery')").removeClass("liHhow");
         $("#portfolio ul.list li:contains('Js')").removeClass("liHhow");
