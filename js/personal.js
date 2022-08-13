@@ -87,7 +87,9 @@ $(function(){
     $(".filterJquery").click(function(){
         $("#portfolio ul.list li").removeClass("liHide");
         $("#portfolio ul.list li:contains('jQuery')").removeClass("liHhow");
+        $("#portfolio ul.list li:contains('Js')").removeClass("liHhow");
         $("#portfolio ul.list li").not("#portfolio ul li:contains('jQuery')").addClass("liHide");
+        $("#portfolio ul.list li").not("#portfolio ul li:contains('Js')").addClass("liHide");
         return false;
     });
 
