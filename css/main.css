@@ -298,11 +298,12 @@ main section .wrap{
   justify-content: center;
   line-height: 2;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   overflow: hidden;
   perspective: 500px;
   border: 2px solid #fff;
   box-sizing: border-box;
+  background-position: top, center;
 }
 #portfolio ul.list li .screen{
   transition: all 0.3s;
